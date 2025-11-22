@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Sobreaviso DRV/DEIC</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: #2563eb;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+
+        .tabs {
+            display: flex;
+            background: #f0f0f0;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .tab-btn {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            color: #666;
+            transition: all 0.3s;
+            border-bottom: 3px solid transparent;
+        }
+
+        .tab-btn.active {
+            background: white;
+            color: #2563eb;
+            border-bottom-color: #2563eb;
+        }
+
+        .tab-btn:hover {
+            background: #f9f9f9;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        select, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            font-family: Arial, sans-serif;
+        }
+
+        select {
+            cursor: pointer;
+        }
+
+        textarea {
+            height: 350px;
+            resize: vertical;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: bold;
+            transition: all 0.3s;
+            flex: 1;
+            min-width: 120px;
+        }
+
+        .btn-copy {
+            background: #2563eb;
+            color: white;
+        }
+
+        .btn-copy:hover {
+            background: #1d4ed8;
+        }
+
+        .btn-whatsapp {
+            background: #16a34a;
+            color: white;
+        }
+
+        .btn-whatsapp:hover {
+            background: #15803d;
+        }
+
+        .btn-clear {
+            background: #6b7280;
+            color: white;
+        }
+
+        .btn-clear:hover {
+            background: #4b5563;
+        }
+
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 20px;
+            }
+
+            .tabs {
+                flex-direction: column;
+            }
+
+            textarea {
+                height: 250px;
+            }
+
+            button {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📋 Gerador de Sobreaviso DRV/DEIC</h1>
+        </div>
+
+        <div class="tabs">
+            <button class="tab-btn active" onclick="showTab(0)">📅 Buscar por Data</button>
+            <button class="tab-btn" onclick="showTab(1)">👤 Buscar por Pessoa</button>
+        </div>
+
+        <div class="content">
+            <!-- ABA 1: BUSCAR POR DATA -->
+            <div class="tab-content active">
+                <label for="date-select">Selecione a data:</label>
+                <select id="date-select" onchange="searchByDate()">
+                    <option value="">-- Escolha uma data --</option>
+                    <option>01/11/2025</option>
+                    <option>02/11/2025</option>
+                    <option>03/11/2025</option>
+                    <option>04/11/2025</option>
+                    <option>05/11/2025</option>
+                    <option>06/11/2025</option>
+                    <option>07/11/2025</option>
+                    <option>08/11/2025</option>
+                    <option>09/11/2025</option>
+                    <option>10/11/2025</option>
+                    <option>11/11/2025</option>
+                    <option>12/11/2025</option>
+                    <option>13/11/2025</option>
+                    <option>14/11/2025</option>
+                    <option>15/11/2025</option>
+                    <option>16/11/2025</option>
+                    <option>17/11/2025</option>
+                    <option>18/11/2025</option>
+                    <option>19/11/2025</option>
+                    <option>20/11/2025</option>
+                    <option>21/11/2025</option>
+                    <option>22/11/2025</option>
+                    <option>23/11/2025</option>
+                    <option>24/11/2025</option>
+                    <option>25/11/2025</option>
+                    <option>26/11/2025</option>
+                    <option>27/11/2025</option>
+                    <option>28/11/2025</option>
+                    <option>29/11/2025</option>
+                    <option>30/11/2025</option>
+                    <option>01/12/2025</option>
+                    <option>02/12/2025</option>
+                    <option>03/12/2025</option>
+                    <option>04/12/2025</option>
+                    <option>05/12/2025</option>
+                    <option>06/12/2025</option>
+                    <option>07/12/2025</option>
+                    <option>08/12/2025</option>
+                    <option>09/12/2025</option>
+                    <option>10/12/2025</option>
+                    <option>11/12/2025</option>
+                    <option>12/12/2025</option>
+                    <option>13/12/2025</option>
+                    <option>14/12/2025</option>
+                    <option>15/12/2025</option>
+                    <option>16/12/2025</option>
+                    <option>17/12/2025</option>
+                    <option>18/12/2025</option>
+                    <option>19/12/2025</option>
+                    <option>20/12/2025</option>
+                    <option>21/12/2025</option>
+                    <option>22/12/2025</option>
+                    <option>23/12/2025</option>
+                    <option>24/12/2025</option>
+                    <option>25/12/2025</option>
+                    <option>26/12/2025</option>
+                    <option>27/12/2025</option>
+                    <option>28/12/2025</option>
+                    <option>29/12/2025</option>
+                    <option>30/12/2025</option>
+                    <option>31/12/2025</option>
+                </select>
+            </div>
+
+            <!-- ABA 2: BUSCAR POR PESSOA -->
+            <div class="tab-content">
+                <label for="person-select">Selecione uma pessoa:</label>
+                <select id="person-select" onchange="searchByPerson()">
+                    <option value="">-- Escolha uma pessoa --</option>
+                    <option>Insp. Acauã</option>
+                    <option>Esc. Anderson Saraiva</option>
+                    <option>Insp. Alexandre Brozoza</option>
+                    <option>Esc. Cátia Fortunato</option>
+                    <option>Insp. Cristiano Soletti</option>
+                    <option>Esc. César da Costa</option>
+                    <option>Esc. Dagoberto O. das Virgens</option>
+                    <option>Insp. Edmilson Melo</option>
+                    <option>Insp. Edna Moraes</option>
+                    <option>Esc. Fernanda Piazza</option>
+                    <option>Insp. Guilherme Mello</option>
+                    <option>Esc. Jefferson Antoniol</option>
+                    <option>Insp. Juliana Tremper</option>
+                    <option>Insp. Juliano Bonacina</option>
+                    <option>Esc. Luciana Bortoli</option>
+                    <option>Insp. Lucas Loss</option>
+                    <option>Insp. Tais Boesing</option>
+                    <option>Insp. Teresinha Carivali</option>
+                    <option>Insp. Thiago Meireles</option>
+                    <option>Insp. Thássia Guterres</option>
+                    <option>Insp. Vanessa Trindade</option>
+                </select>
+            </div>
+
+            <textarea id="output" placeholder="O texto do sobreaviso aparecerá aqui..." readonly></textarea>
+
+            <div class="buttons">
+                <button class="btn-copy" onclick="copyText()">📋 Copiar Texto</button>
+                <button class="btn-whatsapp" onclick="sendWhatsApp()">💚 Enviar no WhatsApp</button>
+                <button class="btn-clear" onclick="clearAll()">🗑️ Limpar</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const nameMap = {
+            "Cau": "Insp. Acauã",
+            "Piazza": "Esc. Fernanda Piazza",
+            "Cristiano": "Insp. Cristiano Soletti",
+            "Teresinha": "Insp. Teresinha Carivali",
+            "Thiago": "Insp. Thiago Meireles",
+            "César": "Esc. César da Costa",
+            "Vanessa": "Insp. Vanessa Trindade",
+            "Bona": "Insp. Juliano Bonacina",
+            "Gui Mello": "Insp. Guilherme Mello",
+            "Tais": "Insp. Tais Boesing",
+            "Jeff": "Esc. Jefferson Antoniol",
+            "Luciana": "Esc. Luciana Bortoli",
+            "Edna": "Insp. Edna Moraes",
+            "Saraiva": "Esc. Anderson Saraiva",
+            "Loss": "Insp. Lucas Loss",
+            "Brozoza": "Insp. Alexandre Brozoza",
+            "Dago": "Esc. Dagoberto O. das Virgens",
+            "Thássia": "Insp. Thássia Guterres",
+            "Juliana": "Insp. Juliana Tremper",
+            "Cátia": "Esc. Cátia Fortunato",
+            "Melo": "Insp. Edmilson Melo"
+        };
+
+        const phoneMap = {
+            "Cau": "(51) 986859065",
+            "Piazza": "(51) 993605744",
+            "Cristiano": "(51) 995659880",
+            "Teresinha": "(51) 999829606",
+            "Thiago": "(79) 988080613",
+            "César": "(51) 998911160",
+            "Vanessa": "(55) 984278960",
+            "Bona": "(51) 989276060",
+            "Gui Mello": "(51) 981354933",
+            "Tais": "(51) 980549435",
+            "Jeff": "(24) 981002933",
+            "Luciana": "(51) 993935552",
+            "Edna": "(53) 981339654",
+            "Saraiva": "(51) 993879343",
+            "Loss": "(51) 991055571",
+            "Brozoza": "(51) 996500506",
+            "Dago": "(51) 999920066",
+            "Thássia": "(51) 996499862",
+            "Juliana": "(51) 993337587",
+            "Cátia": "(51) 985744501",
+            "Melo": "(51) 983190815"
+        };
+
+        const peopleShortMap = {
+            "Insp. Acauã": "Cau",
+            "Esc. Fernanda Piazza": "Piazza",
+            "Insp. Cristiano Soletti": "Cristiano",
+            "Insp. Teresinha Carivali": "Teresinha",
+            "Insp. Thiago Meireles": "Thiago",
+            "Esc. César da Costa": "César",
+            "Insp. Vanessa Trindade": "Vanessa",
+            "Insp. Juliano Bonacina": "Bona",
+            "Insp. Guilherme Mello": "Gui Mello",
+            "Insp. Tais Boesing": "Tais",
+            "Esc. Jefferson Antoniol": "Jeff",
+            "Esc. Luciana Bortoli": "Luciana",
+            "Insp. Edna Moraes": "Edna",
+            "Esc. Anderson Saraiva": "Saraiva",
+            "Insp. Lucas Loss": "Loss",
+            "Insp. Alexandre Brozoza": "Brozoza",
+            "Esc. Dagoberto O. das Virgens": "Dago",
+            "Insp. Thássia Guterres": "Thássia",
+            "Insp. Juliana Tremper": "Juliana",
+            "Esc. Cátia Fortunato": "Cátia",
+            "Insp. Edmilson Melo": "Melo"
+        };
+
+        const schedule = {
+            "01/11/2025": ["Cristiano", "Vanessa", "Thiago"],
+            "02/11/2025": ["Cristiano", "Vanessa", "Thiago"],
+            "03/11/2025": ["Piazza", "César", "Vanessa"],
+            "04/11/2025": ["Bona", "Vanessa", "Saraiva"],
+            "05/11/2025": ["Dago", "Thássia", "Thiago"],
+            "06/11/2025": ["Jeff", "Teresinha", "Saraiva"],
+            "07/11/2025": ["Cristiano", "Teresinha", "Thiago"],
+            "08/11/2025": ["Jeff", "Juliana", "Tais"],
+            "09/11/2025": ["Jeff", "Luciana", "Edna"],
+            "10/11/2025": ["Gui Mello", "Bona", "Tais"],
+            "11/11/2025": ["Brozoza", "Loss", "Saraiva"],
+            "12/11/2025": ["Cau", "Luciana", "Edna"],
+            "13/11/2025": ["Melo", "Cátia", "Jeff"],
+            "14/11/2025": ["Piazza", "Bona", "Saraiva"],
+            "15/11/2025": ["Gui Mello", "Thássia", "Saraiva"],
+            "16/11/2025": ["Gui Mello", "Loss", "Saraiva"],
+            "17/11/2025": ["César", "Teresinha", "Jeff"],
+            "18/11/2025": ["Dago", "Cátia", "Edna"],
+            "19/11/2025": ["Jeff", "Thássia", "Saraiva"],
+            "20/11/2025": ["Cristiano", "Juliana", "Thiago"],
+            "21/11/2025": ["Gui Mello", "Melo", "Thiago"],
+            "22/11/2025": ["Brozoza", "Loss", "Thiago"],
+            "23/11/2025": ["Brozoza", "Loss", "Thiago"],
+            "24/11/2025": ["Cau", "Luciana", "Saraiva"],
+            "25/11/2025": ["Brozoza", "Loss", "Vanessa"],
+            "26/11/2025": ["Melo", "Vanessa", "Jeff"],
+            "27/11/2025": ["Piazza", "Gui Mello", "Tais"],
+            "28/11/2025": ["César", "Juliana", "Vanessa"],
+            "29/11/2025": ["Cau", "Luciana", "Edna"],
+            "30/11/2025": ["Cau", "Juliana", "Edna"],
+            "01/12/2025": ["Dago", "Cátia", ""],
+            "02/12/2025": ["Jeff", "Vanessa", ""],
+            "03/12/2025": ["Cristiano", "Juliana", ""],
+            "04/12/2025": ["Gui Mello", "Jeff", ""],
+            "05/12/2025": ["Brozoza", "Loss", ""],
+            "06/12/2025": ["Melo", "Thássia", ""],
+            "07/12/2025": ["Melo", "Thássia", ""],
+            "08/12/2025": ["Cau", "Luciana", ""],
+            "09/12/2025": ["Melo", "Thássia", ""],
+            "10/12/2025": ["Piazza", "Bona", ""],
+            "11/12/2025": ["César", "Teresinha", ""],
+            "12/12/2025": ["Dago", "Cátia", ""],
+            "13/12/2025": ["Piazza", "Bona", ""],
+            "14/12/2025": ["Piazza", "Bona", ""],
+            "15/12/2025": ["Jeff", "Vanessa", ""],
+            "16/12/2025": ["Cristiano", "Juliana", ""],
+            "17/12/2025": ["Gui Mello", "Teresinha", ""],
+            "18/12/2025": ["Brozoza", "Loss", ""],
+            "19/12/2025": ["Cau", "Luciana", ""],
+            "20/12/2025": ["César", "Teresinha", ""],
+            "21/12/2025": ["César", "Teresinha", ""],
+            "22/12/2025": ["Melo", "Thássia", ""],
+            "23/12/2025": ["Piazza", "Bona", ""],
+            "24/12/2025": ["César", "Teresinha", ""],
+            "25/12/2025": ["Dago", "Cátia", ""],
+            "26/12/2025": ["Jeff", "Vanessa", ""],
+            "27/12/2025": ["Dago", "Cátia", ""],
+            "28/12/2025": ["Dago", "Cátia", ""],
+            "29/12/2025": ["Cristiano", "Juliana", ""],
+            "30/12/2025": ["Gui Mello", "Brozoza", ""],
+            "31/12/2025": ["Brozoza", "Loss", ""]
+        };
+
+        function sortDates(dates) {
+            return dates.sort((a, b) => {
+                const [diaA, mesA, anoA] = a.split('/');
+                const [diaB, mesB, anoB] = b.split('/');
+                const dataA = new Date(anoA, mesA - 1, diaA);
+                const dataB = new Date(anoB, mesB - 1, diaB);
+                return dataA - dataB;
+            });
+        }
+
+        function showTab(index) {
+            const contents = document.querySelectorAll('.tab-content');
+            const buttons = document.querySelectorAll('.tab-btn');
+            
+            contents.forEach((c, i) => {
+                c.classList.remove('active');
+                buttons[i].classList.remove('active');
+            });
+            
+            contents[index].classList.add('active');
+            buttons[index].classList.add('active');
+            
+            document.getElementById('output').value = '';
+        }
+
+        function buildMessage(date) {
+            const escala = schedule[date];
+            if (!escala) return "";
+            
+            const [sa01, sa02, saNac] = escala;
+            const nome1 = nameMap[sa01];
+            const fone1 = phoneMap[sa01];
+            const nome2 = nameMap[sa02];
+            const fone2 = phoneMap[sa02];
+            
+            let text = "*Sobreaviso DRV/DEIC*\n";
+            text += "Data: " + date + "\n\n";
+            text += nome1 + "\n" + fone1 + "\n\n";
+            text += nome2 + "\n" + fone2 + "\n\n";
+            
+            if (saNac && saNac !== "") {
+                const nomeNac = nameMap[saNac];
+                const foneNac = phoneMap[saNac];
+                text += "NAC: " + nomeNac + "\n" + foneNac + "\n\n";
+            }
+            
+            text += "Chefe de SI: Com. Bruna Caldeira\n";
+            text += "(51) 99139-9403\n\n";
+            text += "Autoridade Policial:\n";
+            text += "Del. Jeiselaure de Souza\n";
+            text += "(51) 99145-8919";
+            
+            return text;
+        }
+
+        function searchByDate() {
+            const date = document.getElementById('date-select').value;
+            if (!date) return;
+            document.getElementById('output').value = buildMessage(date);
+        }
+
+        function searchByPerson() {
+            const personFull = document.getElementById('person-select').value;
+            if (!personFull) return;
+            
+            const personShort = peopleShortMap[personFull];
+            let result = '';
+            let novCount = 0;
+            let decCount = 0;
+            let datesFound = [];
+
+            // Encontrar todas as datas e contar por mês
+            for (let date in schedule) {
+                const escala = schedule[date];
+                const sa01 = escala[0];
+                const sa02 = escala[1];
+                const saNac = escala[2];
+                
+                if (sa01 === personShort || sa02 === personShort || saNac === personShort) {
+                    datesFound.push(date);
+                    if (date.includes("/11/")) {
+                        novCount++;
+                    } else if (date.includes("/12/")) {
+                        decCount++;
+                    }
+                }
+            }
+
+            // Ordenar as datas de forma crescente
+            datesFound = sortDates(datesFound);
+
+            // Adicionar resumo
+            result += "Novembro: " + novCount + " sobreavisos\n";
+            result += "Dezembro: " + decCount + " sobreavisos\n\n";
+            result += "════════════════════════════════════════\n\n";
+
+            // Gerar texto completo para cada dia em ordem crescente
+            for (let i = 0; i < datesFound.length; i++) {
+                if (i > 0) {
+                    result += "\n\n════════════════════════════════════════\n\n";
+                }
+                result += buildMessage(datesFound[i]);
+            }
+            
+            document.getElementById('output').value = result;
+        }
+
+        function copyText() {
+            const text = document.getElementById('output').value;
+            if (!text) {
+                alert('Nenhum texto para copiar!');
+                return;
+            }
+            navigator.clipboard.writeText(text).then(() => {
+                alert('✅ Texto copiado!');
+            });
+        }
+
+        function sendWhatsApp() {
+            const text = document.getElementById('output').value;
+            if (!text) {
+                alert('Nenhum texto para enviar!');
+                return;
+            }
+            const encoded = encodeURIComponent(text);
+            window.open(`https://wa.me/?text=${encoded}`, '_blank');
+        }
+
+        function clearAll() {
+            document.getElementById('output').value = '';
+            document.getElementById('date-select').value = '';
+            document.getElementById('person-select').value = '';
+        }
+    </script>
+</body>
+</html>
