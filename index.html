@@ -56,8 +56,8 @@
             <label for="date-select">Selecione a data:</label>
             <select id="date-select" onchange="searchByDate()">
                 <option value="">-- Escolha uma data --</option>
-                <!-- Todas as datas de novembro e dezembro 2025 -->
-                <option>01/11/2025</option><option>02/11/2025</option><option>03/11/2025</option><option>04/11/2025</option><option>05/11/2025</option><option>06/11/2025</option><option>07/11/2025</option><option>08/11/2025</option><option>09/11/2025</option><option>10/11/2025</option><option>11/11/2025</option><option>12/11/2025</option><option>13/11/2025</option><option>14/11/2025</option><option>15/11/2025</option><option>16/11/2025</option><option>17/11/2025</option><option>18/11/2025</option><option>19/11/2025</option><option>20/11/2025</option><option>21/11/2025</option><option>22/11/2025</option><option>23/11/2025</option><option>24/11/2025</option><option>25/11/2025</option><option>26/11/2025</option><option>27/11/2025</option><option>28/11/2025</option><option>29/11/2025</option><option>30/11/2025</option><option>01/12/2025</option><option>02/12/2025</option><option>03/12/2025</option><option>04/12/2025</option><option>05/12/2025</option><option>06/12/2025</option><option>07/12/2025</option><option>08/12/2025</option><option>09/12/2025</option><option>10/12/2025</option><option>11/12/2025</option><option>12/12/2025</option><option>13/12/2025</option><option>14/12/2025</option><option>15/12/2025</option><option>16/12/2025</option><option>17/12/2025</option><option>18/12/2025</option><option>19/12/2025</option><option>20/12/2025</option><option>21/12/2025</option><option>22/12/2025</option><option>23/12/2025</option><option>24/12/2025</option><option>25/12/2025</option><option>26/12/2025</option><option>27/12/2025</option><option>28/12/2025</option><option>29/12/2025</option><option>30/12/2025</option><option>31/12/2025</option>
+                <option>01/11/2025</option><option>02/11/2025</option><option>03/11/2025</option><option>04/11/2025</option><option>05/11/2025</option><option>06/11/2025</option><option>07/11/2025</option><option>08/11/2025</option><option>09/11/2025</option><option>10/11/2025</option><option>11/11/2025</option><option>12/11/2025</option><option>13/11/2025</option><option>14/11/2025</option><option>15/11/2025</option><option>16/11/2025</option><option>17/11/2025</option><option>18/11/2025</option><option>19/11/2025</option><option>20/11/2025</option><option>21/11/2025</option><option>22/11/2025</option><option>23/11/2025</option><option>24/11/2025</option><option>25/11/2025</option><option>26/11/2025</option><option>27/11/2025</option><option>28/11/2025</option><option>29/11/2025</option><option>30/11/2025</option>
+                <option>01/12/2025</option><option>02/12/2025</option><option>03/12/2025</option><option>04/12/2025</option><option>05/12/2025</option><option>06/12/2025</option><option>07/12/2025</option><option>08/12/2025</option><option>09/12/2025</option><option>10/12/2025</option><option>11/12/2025</option><option>12/12/2025</option><option>13/12/2025</option><option>14/12/2025</option><option>15/12/2025</option><option>16/12/2025</option><option>17/12/2025</option><option>18/12/2025</option><option>19/12/2025</option><option>20/12/2025</option><option>21/12/2025</option><option>22/12/2025</option><option>23/12/2025</option><option>24/12/2025</option><option>25/12/2025</option><option>26/12/2025</option><option>27/12/2025</option><option>28/12/2025</option><option>29/12/2025</option><option>30/12/2025</option><option>31/12/2025</option>
             </select>
         </div>
         <!-- ABA 2: BUSCAR POR PESSOA -->
@@ -71,9 +71,10 @@
         <!-- ABA 3: TROCAS -->
         <div class="tab-content">
             <label for="troca-date">Selecione a data da troca:</label>
-            <select id="troca-date" onchange="trocaChangeOptions()">
+            <select id="troca-date" onchange="trocaChangeOptions(true)">
                 <option value="">-- Escolha uma data --</option>
-                <option>01/11/2025</option><option>02/11/2025</option><option>03/11/2025</option><option>04/11/2025</option><option>05/11/2025</option><option>06/11/2025</option><option>07/11/2025</option><option>08/11/2025</option><option>09/11/2025</option><option>10/11/2025</option><option>11/11/2025</option><option>12/11/2025</option><option>13/11/2025</option><option>14/11/2025</option><option>15/11/2025</option><option>16/11/2025</option><option>17/11/2025</option><option>18/11/2025</option><option>19/11/2025</option><option>20/11/2025</option><option>21/11/2025</option><option>22/11/2025</option><option>23/11/2025</option><option>24/11/2025</option><option>25/11/2025</option><option>26/11/2025</option><option>27/11/2025</option><option>28/11/2025</option><option>29/11/2025</option><option>30/11/2025</option><option>01/12/2025</option><option>02/12/2025</option><option>03/12/2025</option><option>04/12/2025</option><option>05/12/2025</option><option>06/12/2025</option><option>07/12/2025</option><option>08/12/2025</option><option>09/12/2025</option><option>10/12/2025</option><option>11/12/2025</option><option>12/12/2025</option><option>13/12/2025</option><option>14/12/2025</option><option>15/12/2025</option><option>16/12/2025</option><option>17/12/2025</option><option>18/12/2025</option><option>19/12/2025</option><option>20/12/2025</option><option>21/12/2025</option><option>22/12/2025</option><option>23/12/2025</option><option>24/12/2025</option><option>25/12/2025</option><option>26/12/2025</option><option>27/12/2025</option><option>28/12/2025</option><option>29/12/2025</option><option>30/12/2025</option><option>31/12/2025</option>
+                <option>01/11/2025</option><option>02/11/2025</option><option>03/11/2025</option><option>04/11/2025</option><option>05/11/2025</option><option>06/11/2025</option><option>07/11/2025</option><option>08/11/2025</option><option>09/11/2025</option><option>10/11/2025</option><option>11/11/2025</option><option>12/11/2025</option><option>13/11/2025</option><option>14/11/2025</option><option>15/11/2025</option><option>16/11/2025</option><option>17/11/2025</option><option>18/11/2025</option><option>19/11/2025</option><option>20/11/2025</option><option>21/11/2025</option><option>22/11/2025</option><option>23/11/2025</option><option>24/11/2025</option><option>25/11/2025</option><option>26/11/2025</option><option>27/11/2025</option><option>28/11/2025</option><option>29/11/2025</option><option>30/11/2025</option>
+                <option>01/12/2025</option><option>02/12/2025</option><option>03/12/2025</option><option>04/12/2025</option><option>05/12/2025</option><option>06/12/2025</option><option>07/12/2025</option><option>08/12/2025</option><option>09/12/2025</option><option>10/12/2025</option><option>11/12/2025</option><option>12/12/2025</option><option>13/12/2025</option><option>14/12/2025</option><option>15/12/2025</option><option>16/12/2025</option><option>17/12/2025</option><option>18/12/2025</option><option>19/12/2025</option><option>20/12/2025</option><option>21/12/2025</option><option>22/12/2025</option><option>23/12/2025</option><option>24/12/2025</option><option>25/12/2025</option><option>26/12/2025</option><option>27/12/2025</option><option>28/12/2025</option><option>29/12/2025</option><option>30/12/2025</option><option>31/12/2025</option>
             </select>
             <div class="troca-bloco">
                 <label for="pessoa-original1">Pessoa originalmente escalada (1):</label>
@@ -126,42 +127,12 @@ const phoneMap = {
     "Dago": "(51) 999920066", "Thássia": "(51) 996499862", "Juliana": "(51) 993337587", "Cátia": "(51) 985744501",
     "Melo": "(51) 983190815"
 };
-// --- Escala completa ---
 const schedule = {
     "01/11/2025": ["Cristiano", "Vanessa", "Thiago"], "02/11/2025": ["Cristiano", "Vanessa", "Thiago"],
-    "03/11/2025": ["Piazza", "César", "Vanessa"], "04/11/2025": ["Bona", "Vanessa", "Saraiva"],
-    "05/11/2025": ["Dago", "Thássia", "Thiago"], "06/11/2025": ["Jeff", "Teresinha", "Saraiva"],
-    "07/11/2025": ["Cristiano", "Teresinha", "Thiago"], "08/11/2025": ["Jeff", "Juliana", "Tais"],
-    "09/11/2025": ["Jeff", "Luciana", "Edna"], "10/11/2025": ["Gui Mello", "Bona", "Tais"],
-    "11/11/2025": ["Brozoza", "Loss", "Saraiva"], "12/11/2025": ["Cau", "Luciana", "Edna"],
-    "13/11/2025": ["Melo", "Cátia", "Jeff"], "14/11/2025": ["Piazza", "Bona", "Saraiva"],
-    "15/11/2025": ["Gui Mello", "Thássia", "Saraiva"], "16/11/2025": ["Gui Mello", "Loss", "Saraiva"],
-    "17/11/2025": ["César", "Teresinha", "Jeff"], "18/11/2025": ["Dago", "Cátia", "Edna"],
-    "19/11/2025": ["Jeff", "Thássia", "Saraiva"], "20/11/2025": ["Cristiano", "Juliana", "Thiago"],
-    "21/11/2025": ["Gui Mello", "Melo", "Thiago"], "22/11/2025": ["Brozoza", "Loss", "Thiago"],
-    "23/11/2025": ["Brozoza", "Loss", "Thiago"], "24/11/2025": ["Cau", "Luciana", "Saraiva"],
-    "25/11/2025": ["Brozoza", "Loss", "Vanessa"], "26/11/2025": ["Melo", "Vanessa", "Jeff"],
-    "27/11/2025": ["Piazza", "Gui Mello", "Tais"], "28/11/2025": ["César", "Juliana", "Vanessa"],
-    "29/11/2025": ["Cau", "Luciana", "Edna"], "30/11/2025": ["Cau", "Juliana", "Edna"],
-    "01/12/2025": ["Dago", "Cátia", ""], "02/12/2025": ["Jeff", "Vanessa", ""],
-    "03/12/2025": ["Cristiano", "Juliana", ""], "04/12/2025": ["Gui Mello", "Jeff", ""],
-    "05/12/2025": ["Brozoza", "Loss", ""], "06/12/2025": ["Melo", "Thássia", ""],
-    "07/12/2025": ["Melo", "Thássia", ""], "08/12/2025": ["Cau", "Luciana", ""],
-    "09/12/2025": ["Melo", "Thássia", ""], "10/12/2025": ["Piazza", "Bona", ""],
-    "11/12/2025": ["César", "Teresinha", ""], "12/12/2025": ["Dago", "Cátia", ""],
-    "13/12/2025": ["Piazza", "Bona", ""], "14/12/2025": ["Piazza", "Bona", ""],
-    "15/12/2025": ["Jeff", "Vanessa", ""], "16/12/2025": ["Cristiano", "Juliana", ""],
-    "17/12/2025": ["Gui Mello", "Teresinha", ""], "18/12/2025": ["Brozoza", "Loss", ""],
-    "19/12/2025": ["Cau", "Luciana", ""], "20/12/2025": ["César", "Teresinha", ""],
-    "21/12/2025": ["César", "Teresinha", ""], "22/12/2025": ["Melo", "Thássia", ""],
-    "23/12/2025": ["Piazza", "Bona", ""], "24/12/2025": ["César", "Teresinha", ""],
-    "25/12/2025": ["Dago", "Cátia", ""], "26/12/2025": ["Jeff", "Vanessa", ""],
-    "27/12/2025": ["Dago", "Cátia", ""], "28/12/2025": ["Dago", "Cátia", ""],
-    "29/12/2025": ["Cristiano", "Juliana", ""], "30/12/2025": ["Gui Mello", "Brozoza", ""],
-    "31/12/2025": ["Brozoza", "Loss", ""]
+    "03/11/2025": ["Piazza", "César", "Vanessa"], "04/11/2025": ["Bona", "Vanessa", "Saraiva"], "05/11/2025": ["Dago", "Thássia", "Thiago"], "06/11/2025": ["Jeff", "Teresinha", "Saraiva"], "07/11/2025": ["Cristiano", "Teresinha", "Thiago"], "08/11/2025": ["Jeff", "Juliana", "Tais"], "09/11/2025": ["Jeff", "Luciana", "Edna"], "10/11/2025": ["Gui Mello", "Bona", "Tais"], "11/11/2025": ["Brozoza", "Loss", "Saraiva"], "12/11/2025": ["Cau", "Luciana", "Edna"], "13/11/2025": ["Melo", "Cátia", "Jeff"], "14/11/2025": ["Piazza", "Bona", "Saraiva"], "15/11/2025": ["Gui Mello", "Thássia", "Saraiva"], "16/11/2025": ["Gui Mello", "Loss", "Saraiva"], "17/11/2025": ["César", "Teresinha", "Jeff"], "18/11/2025": ["Dago", "Cátia", "Edna"], "19/11/2025": ["Jeff", "Thássia", "Saraiva"], "20/11/2025": ["Cristiano", "Juliana", "Thiago"], "21/11/2025": ["Gui Mello", "Melo", "Thiago"], "22/11/2025": ["Brozoza", "Loss", "Thiago"], "23/11/2025": ["Brozoza", "Loss", "Thiago"], "24/11/2025": ["Cau", "Luciana", "Saraiva"], "25/11/2025": ["Brozoza", "Loss", "Vanessa"], "26/11/2025": ["Melo", "Vanessa", "Jeff"], "27/11/2025": ["Piazza", "Gui Mello", "Tais"], "28/11/2025": ["César", "Juliana", "Vanessa"], "29/11/2025": ["Cau", "Luciana", "Edna"], "30/11/2025": ["Cau", "Juliana", "Edna"], "01/12/2025": ["Dago", "Cátia", ""], "02/12/2025": ["Jeff", "Vanessa", ""], "03/12/2025": ["Cristiano", "Juliana", ""], "04/12/2025": ["Gui Mello", "Jeff", ""], "05/12/2025": ["Brozoza", "Loss", ""], "06/12/2025": ["Melo", "Thássia", ""], "07/12/2025": ["Melo", "Thássia", ""], "08/12/2025": ["Cau", "Luciana", ""], "09/12/2025": ["Melo", "Thássia", ""], "10/12/2025": ["Piazza", "Bona", ""], "11/12/2025": ["César", "Teresinha", ""], "12/12/2025": ["Dago", "Cátia", ""], "13/12/2025": ["Piazza", "Bona", ""], "14/12/2025": ["Piazza", "Bona", ""], "15/12/2025": ["Jeff", "Vanessa", ""], "16/12/2025": ["Cristiano", "Juliana", ""], "17/12/2025": ["Gui Mello", "Teresinha", ""], "18/12/2025": ["Brozoza", "Loss", ""], "19/12/2025": ["Cau", "Luciana", ""], "20/12/2025": ["César", "Teresinha", ""], "21/12/2025": ["César", "Teresinha", ""], "22/12/2025": ["Melo", "Thássia", ""], "23/12/2025": ["Piazza", "Bona", ""], "24/12/2025": ["César", "Teresinha", ""], "25/12/2025": ["Dago", "Cátia", ""], "26/12/2025": ["Jeff", "Vanessa", ""], "27/12/2025": ["Dago", "Cátia", ""], "28/12/2025": ["Dago", "Cátia", ""], "29/12/2025": ["Cristiano", "Juliana", ""], "30/12/2025": ["Gui Mello", "Brozoza", ""], "31/12/2025": ["Brozoza", "Loss", ""]
 };
-// --- Trocas dinâmicas ---
-function trocaChangeOptions() {
+// Preenche a opção das trocas (só pessoas daquele dia como "originalmente escalada"; todas em "fará a troca")
+function trocaChangeOptions(atualizaTexto) {
     const date = document.getElementById('troca-date').value;
     let esc = schedule[date] || ["", "", ""];
     for (let i=1; i<=3; i++) {
@@ -172,6 +143,8 @@ function trocaChangeOptions() {
         troca.innerHTML = '<option value="">-- Escolha a pessoa substituta --</option>';
         pessoas.forEach(p => troca.innerHTML += `<option value="${p.val}">${p.label}</option>`);
     }
+    // NOVO: ao mudar a data, mostra texto padrão do dia antes das trocas
+    if (atualizaTexto) document.getElementById('output').value = buildMessage(date);
 }
 window.onload = function() { trocaChangeOptions(); };
 function showTab(index) {
