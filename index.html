@@ -307,17 +307,11 @@ function buildMessage(date, escalaManual) {
     let escala = escalaManual || schedule[date];
     if (!escala) return "";
     const [sa01, sa02, saNac] = escala;
-    const nome1 = nameMap[sa01] || '';
-    const fone1 = phoneMap[sa01] || '';
-    const nome2 = nameMap[sa02] || '';
-    const fone2 = phoneMap[sa02] || '';
     let text = "*Sobreaviso DRV/DEIC*\nData: " + date + "\n\n";
-    if (nome1) text += nome1 + "\n" + fone1 + "\n\n";
-    if (nome2) text += nome2 + "\n" + fone2 + "\n\n";
+    if (nameMap[sa01]) text += nameMap[sa01] + "\n" + phoneMap[sa01] + "\n\n";
+    if (nameMap[sa02]) text += nameMap[sa02] + "\n" + phoneMap[sa02] + "\n\n";
     if (saNac && saNac !== "" && nameMap[saNac]) {
-        const nomeNac = nameMap[saNac];
-        const foneNac = phoneMap[saNac];
-        text += "NAC: " + nomeNac + "\n" + foneNac + "\n\n";
+        text += "NAC: " + nameMap[saNac] + "\n" + phoneMap[saNac] + "\n\n";
     }
     text += "Chefe de SI: Com. Bruna Caldeira\n(51) 99139-9403\n\nAutoridade Policial:\nDel. Jeiselaure de Souza\n(51) 99145-8919";
     return text;
@@ -333,17 +327,11 @@ function buildMessageWithDay(date, escalaManual) {
     if (!escala) return "";
     const dayOfWeek = getDayOfWeek(date);
     const [sa01, sa02, saNac] = escala;
-    const nome1 = nameMap[sa01] || '';
-    const fone1 = phoneMap[sa01] || '';
-    const nome2 = nameMap[sa02] || '';
-    const fone2 = phoneMap[sa02] || '';
     let text = "*Sobreaviso DRV/DEIC*\nData: " + date + " (" + dayOfWeek + ")\n\n";
-    if (nome1) text += nome1 + "\n" + fone1 + "\n\n";
-    if (nome2) text += nome2 + "\n" + fone2 + "\n\n";
+    if (nameMap[sa01]) text += nameMap[sa01] + "\n" + phoneMap[sa01] + "\n\n";
+    if (nameMap[sa02]) text += nameMap[sa02] + "\n" + phoneMap[sa02] + "\n\n";
     if (saNac && saNac !== "" && nameMap[saNac]) {
-        const nomeNac = nameMap[saNac];
-        const foneNac = phoneMap[saNac];
-        text += "NAC: " + nomeNac + "\n" + foneNac + "\n\n";
+        text += "NAC: " + nameMap[saNac] + "\n" + phoneMap[saNac] + "\n\n";
     }
     text += "Chefe de SI: Com. Bruna Caldeira\n(51) 99139-9403\n\nAutoridade Policial:\nDel. Jeiselaure de Souza\n(51) 99145-8919";
     return text;
@@ -351,7 +339,7 @@ function buildMessageWithDay(date, escalaManual) {
 function searchByDate() {
     const date = document.getElementById('date-select').value;
     if (!date) return;
-    document.getElementById('output').value = buildMessage(date);
+    document.getElementById('output').value = buildMessageWithDay(date);
 }
 function handlePersonSearch() {
     const personShort = document.getElementById('person-select').value;
@@ -390,8 +378,6 @@ function handlePersonSearch() {
     }
     outputElement.value = result;
 }
-
-// CORRIGIDO: aceita qualquer troca informada e só retorna erro se nenhuma foi informada/realizada
 function aplicarTrocasMultiplas() {
     const date = document.getElementById('troca-date').value;
     const original1 = document.getElementById('pessoa-original1').value;
@@ -422,11 +408,7 @@ function aplicarTrocasMultiplas() {
     applyExchange(original1, substituta1);
     applyExchange(original2, substituta2);
     applyExchange(original3, substituta3);
-
-    if (!trocouAlguem) {
-        outputElement.value = "Nenhuma troca foi realizada. Preencha os campos corretamente!";
-        return;
-    }
+    // Mesmo se nenhuma troca for feita, gera o texto padrão do dia:
     outputElement.value = buildMessageWithDay(date, escalaAtual);
 }
 function copyText() {
