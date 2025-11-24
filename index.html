@@ -51,24 +51,37 @@
         <button class="tab-btn" onclick="showTab(2)">🔄 Trocas</button>
     </div>
     <div class="content">
+
         <!-- ABA 1: BUSCAR POR DATA -->
         <div class="tab-content active">
             <label for="date-select">Selecione a data:</label>
             <select id="date-select" onchange="searchByDate()">
                 <option value="">-- Escolha uma data --</option>
-                <!-- Todas as datas -->
-                <script>
-                    for(let m=11;m<=12;m++) {
-                        let dias=(m===11)?30:31;
-                        for(let d=1;d<=dias;d++) {
-                            let day = d.toString().padStart(2,'0');
-                            let month = m.toString().padStart(2,'0');
-                            document.write(`<option>${day}/${month}/2025</option>`);
-                        }
-                    }
-                </script>
+                <!-- Todas as datas de novembro e dezembro 2025 -->
+                <option>01/11/2025</option><option>02/11/2025</option><option>03/11/2025</option>
+                <option>04/11/2025</option><option>05/11/2025</option><option>06/11/2025</option>
+                <option>07/11/2025</option><option>08/11/2025</option><option>09/11/2025</option>
+                <option>10/11/2025</option><option>11/11/2025</option><option>12/11/2025</option>
+                <option>13/11/2025</option><option>14/11/2025</option><option>15/11/2025</option>
+                <option>16/11/2025</option><option>17/11/2025</option><option>18/11/2025</option>
+                <option>19/11/2025</option><option>20/11/2025</option><option>21/11/2025</option>
+                <option>22/11/2025</option><option>23/11/2025</option><option>24/11/2025</option>
+                <option>25/11/2025</option><option>26/11/2025</option><option>27/11/2025</option>
+                <option>28/11/2025</option><option>29/11/2025</option><option>30/11/2025</option>
+                <option>01/12/2025</option><option>02/12/2025</option><option>03/12/2025</option>
+                <option>04/12/2025</option><option>05/12/2025</option><option>06/12/2025</option>
+                <option>07/12/2025</option><option>08/12/2025</option><option>09/12/2025</option>
+                <option>10/12/2025</option><option>11/12/2025</option><option>12/12/2025</option>
+                <option>13/12/2025</option><option>14/12/2025</option><option>15/12/2025</option>
+                <option>16/12/2025</option><option>17/12/2025</option><option>18/12/2025</option>
+                <option>19/12/2025</option><option>20/12/2025</option><option>21/12/2025</option>
+                <option>22/12/2025</option><option>23/12/2025</option><option>24/12/2025</option>
+                <option>25/12/2025</option><option>26/12/2025</option><option>27/12/2025</option>
+                <option>28/12/2025</option><option>29/12/2025</option><option>30/12/2025</option>
+                <option>31/12/2025</option>
             </select>
         </div>
+
         <!-- ABA 2: BUSCAR POR PESSOA -->
         <div class="tab-content">
             <label for="person-select">Selecione uma pessoa:</label>
@@ -87,21 +100,33 @@
                 <option value="Vanessa">Insp. Vanessa Trindade</option>
             </select>
         </div>
+
         <!-- ABA 3: TROCAS -->
         <div class="tab-content">
             <label for="troca-date">Selecione a data da troca:</label>
             <select id="troca-date">
                 <option value="">-- Escolha uma data --</option>
-                <script>
-                    for(let m=11;m<=12;m++) {
-                        let dias=(m===11)?30:31;
-                        for(let d=1;d<=dias;d++) {
-                            let day = d.toString().padStart(2,'0');
-                            let month = m.toString().padStart(2,'0');
-                            document.write(`<option>${day}/${month}/2025</option>`);
-                        }
-                    }
-                </script>
+                <option>01/11/2025</option><option>02/11/2025</option><option>03/11/2025</option>
+                <option>04/11/2025</option><option>05/11/2025</option><option>06/11/2025</option>
+                <option>07/11/2025</option><option>08/11/2025</option><option>09/11/2025</option>
+                <option>10/11/2025</option><option>11/11/2025</option><option>12/11/2025</option>
+                <option>13/11/2025</option><option>14/11/2025</option><option>15/11/2025</option>
+                <option>16/11/2025</option><option>17/11/2025</option><option>18/11/2025</option>
+                <option>19/11/2025</option><option>20/11/2025</option><option>21/11/2025</option>
+                <option>22/11/2025</option><option>23/11/2025</option><option>24/11/2025</option>
+                <option>25/11/2025</option><option>26/11/2025</option><option>27/11/2025</option>
+                <option>28/11/2025</option><option>29/11/2025</option><option>30/11/2025</option>
+                <option>01/12/2025</option><option>02/12/2025</option><option>03/12/2025</option>
+                <option>04/12/2025</option><option>05/12/2025</option><option>06/12/2025</option>
+                <option>07/12/2025</option><option>08/12/2025</option><option>09/12/2025</option>
+                <option>10/12/2025</option><option>11/12/2025</option><option>12/12/2025</option>
+                <option>13/12/2025</option><option>14/12/2025</option><option>15/12/2025</option>
+                <option>16/12/2025</option><option>17/12/2025</option><option>18/12/2025</option>
+                <option>19/12/2025</option><option>20/12/2025</option><option>21/12/2025</option>
+                <option>22/12/2025</option><option>23/12/2025</option><option>24/12/2025</option>
+                <option>25/12/2025</option><option>26/12/2025</option><option>27/12/2025</option>
+                <option>28/12/2025</option><option>29/12/2025</option><option>30/12/2025</option>
+                <option>31/12/2025</option>
             </select>
             <!-- Troca 1 -->
             <div class="troca-bloco">
@@ -141,6 +166,7 @@
                 <label for="pessoa-original2">Pessoa originalmente escalada (2):</label>
                 <select id="pessoa-original2">
                     <option value="">-- Escolha a pessoa original --</option>
+                    <!-- ... (mesmas opções acima) ... -->
                     <option value="Cau">Insp. Acauã</option><option value="Saraiva">Esc. Anderson Saraiva</option>
                     <option value="Brozoza">Insp. Alexandre Brozoza</option><option value="Cátia">Esc. Cátia Fortunato</option>
                     <option value="Cristiano">Insp. Cristiano Soletti</option><option value="César">Esc. César da Costa</option>
@@ -156,6 +182,7 @@
                 <label for="pessoa-troca2">Pessoa que fará a troca (2):</label>
                 <select id="pessoa-troca2">
                     <option value="">-- Escolha a pessoa substituta --</option>
+                    <!-- ... (mesmas opções acima) ... -->
                     <option value="Cau">Insp. Acauã</option><option value="Saraiva">Esc. Anderson Saraiva</option>
                     <option value="Brozoza">Insp. Alexandre Brozoza</option><option value="Cátia">Esc. Cátia Fortunato</option>
                     <option value="Cristiano">Insp. Cristiano Soletti</option><option value="César">Esc. César da Costa</option>
@@ -174,6 +201,7 @@
                 <label for="pessoa-original3">Pessoa originalmente escalada (3):</label>
                 <select id="pessoa-original3">
                     <option value="">-- Escolha a pessoa original --</option>
+                    <!-- ... (mesmas opções acima) ... -->
                     <option value="Cau">Insp. Acauã</option><option value="Saraiva">Esc. Anderson Saraiva</option>
                     <option value="Brozoza">Insp. Alexandre Brozoza</option><option value="Cátia">Esc. Cátia Fortunato</option>
                     <option value="Cristiano">Insp. Cristiano Soletti</option><option value="César">Esc. César da Costa</option>
@@ -189,6 +217,7 @@
                 <label for="pessoa-troca3">Pessoa que fará a troca (3):</label>
                 <select id="pessoa-troca3">
                     <option value="">-- Escolha a pessoa substituta --</option>
+                    <!-- ... (mesmas opções acima) ... -->
                     <option value="Cau">Insp. Acauã</option><option value="Saraiva">Esc. Anderson Saraiva</option>
                     <option value="Brozoza">Insp. Alexandre Brozoza</option><option value="Cátia">Esc. Cátia Fortunato</option>
                     <option value="Cristiano">Insp. Cristiano Soletti</option><option value="César">Esc. César da Costa</option>
@@ -213,7 +242,6 @@
     </div>
 </div>
 <script>
-// Mapeamentos, agendas etc. Está igual ao seu modelo anterior.
 const nameMap = {
     "Cau": "Insp. Acauã", "Piazza": "Esc. Fernanda Piazza", "Cristiano": "Insp. Cristiano Soletti",
     "Teresinha": "Insp. Teresinha Carivali", "Thiago": "Insp. Thiago Meireles", "César": "Esc. César da Costa",
@@ -232,9 +260,39 @@ const phoneMap = {
     "Dago": "(51) 999920066", "Thássia": "(51) 996499862", "Juliana": "(51) 993337587", "Cátia": "(51) 985744501",
     "Melo": "(51) 983190815"
 };
-// COLE AQUI O OBJETO "schedule" igual aos exemplos anteriores, com todas as datas!
-
-// Função para mudar abas
+const schedule = {
+    "01/11/2025": ["Cristiano", "Vanessa", "Thiago"], "02/11/2025": ["Cristiano", "Vanessa", "Thiago"],
+    "03/11/2025": ["Piazza", "César", "Vanessa"], "04/11/2025": ["Bona", "Vanessa", "Saraiva"],
+    "05/11/2025": ["Dago", "Thássia", "Thiago"], "06/11/2025": ["Jeff", "Teresinha", "Saraiva"],
+    "07/11/2025": ["Cristiano", "Teresinha", "Thiago"], "08/11/2025": ["Jeff", "Juliana", "Tais"],
+    "09/11/2025": ["Jeff", "Luciana", "Edna"], "10/11/2025": ["Gui Mello", "Bona", "Tais"],
+    "11/11/2025": ["Brozoza", "Loss", "Saraiva"], "12/11/2025": ["Cau", "Luciana", "Edna"],
+    "13/11/2025": ["Melo", "Cátia", "Jeff"], "14/11/2025": ["Piazza", "Bona", "Saraiva"],
+    "15/11/2025": ["Gui Mello", "Thássia", "Saraiva"], "16/11/2025": ["Gui Mello", "Loss", "Saraiva"],
+    "17/11/2025": ["César", "Teresinha", "Jeff"], "18/11/2025": ["Dago", "Cátia", "Edna"],
+    "19/11/2025": ["Jeff", "Thássia", "Saraiva"], "20/11/2025": ["Cristiano", "Juliana", "Thiago"],
+    "21/11/2025": ["Gui Mello", "Melo", "Thiago"], "22/11/2025": ["Brozoza", "Loss", "Thiago"],
+    "23/11/2025": ["Brozoza", "Loss", "Thiago"], "24/11/2025": ["Cau", "Luciana", "Saraiva"],
+    "25/11/2025": ["Brozoza", "Loss", "Vanessa"], "26/11/2025": ["Melo", "Vanessa", "Jeff"],
+    "27/11/2025": ["Piazza", "Gui Mello", "Tais"], "28/11/2025": ["César", "Juliana", "Vanessa"],
+    "29/11/2025": ["Cau", "Luciana", "Edna"], "30/11/2025": ["Cau", "Juliana", "Edna"],
+    "01/12/2025": ["Dago", "Cátia", ""], "02/12/2025": ["Jeff", "Vanessa", ""],
+    "03/12/2025": ["Cristiano", "Juliana", ""], "04/12/2025": ["Gui Mello", "Jeff", ""],
+    "05/12/2025": ["Brozoza", "Loss", ""], "06/12/2025": ["Melo", "Thássia", ""],
+    "07/12/2025": ["Melo", "Thássia", ""], "08/12/2025": ["Cau", "Luciana", ""],
+    "09/12/2025": ["Melo", "Thássia", ""], "10/12/2025": ["Piazza", "Bona", ""],
+    "11/12/2025": ["César", "Teresinha", ""], "12/12/2025": ["Dago", "Cátia", ""],
+    "13/12/2025": ["Piazza", "Bona", ""], "14/12/2025": ["Piazza", "Bona", ""],
+    "15/12/2025": ["Jeff", "Vanessa", ""], "16/12/2025": ["Cristiano", "Juliana", ""],
+    "17/12/2025": ["Gui Mello", "Teresinha", ""], "18/12/2025": ["Brozoza", "Loss", ""],
+    "19/12/2025": ["Cau", "Luciana", ""], "20/12/2025": ["César", "Teresinha", ""],
+    "21/12/2025": ["César", "Teresinha", ""], "22/12/2025": ["Melo", "Thássia", ""],
+    "23/12/2025": ["Piazza", "Bona", ""], "24/12/2025": ["César", "Teresinha", ""],
+    "25/12/2025": ["Dago", "Cátia", ""], "26/12/2025": ["Jeff", "Vanessa", ""],
+    "27/12/2025": ["Dago", "Cátia", ""], "28/12/2025": ["Dago", "Cátia", ""],
+    "29/12/2025": ["Cristiano", "Juliana", ""], "30/12/2025": ["Gui Mello", "Brozoza", ""],
+    "31/12/2025": ["Brozoza", "Loss", ""]
+};
 function showTab(index) {
     const contents = document.querySelectorAll('.tab-content');
     const buttons = document.querySelectorAll('.tab-btn');
@@ -244,10 +302,15 @@ function showTab(index) {
     buttons[index].classList.add('active');
     document.getElementById('output').value = '';
 }
-// Função para buscar por data (SEM dia da semana)
+function getDayOfWeek(dateStr) {
+    const [dia, mes, ano] = dateStr.split('/');
+    const date = new Date(ano, mes - 1, dia);
+    const days = ['domingo', 'segunda-feira', 'terça-feira', 'quarta-feira', 'quinta-feira', 'sexta-feira', 'sábado'];
+    return days[date.getDay()];
+}
 function buildMessage(date, escalaManual) {
     let escala = escalaManual || schedule[date];
-    if (!escala) return "";
+    if (!escala) return "Nenhum sobreaviso encontrado para essa data ou seleção.";
     const [sa01, sa02, saNac] = escala;
     let text = "*Sobreaviso DRV/DEIC*\nData: " + date + "\n\n";
     if (nameMap[sa01]) text += nameMap[sa01] + "\n" + phoneMap[sa01] + "\n\n";
@@ -258,16 +321,9 @@ function buildMessage(date, escalaManual) {
     text += "Chefe de SI: Com. Bruna Caldeira\n(51) 99139-9403\n\nAutoridade Policial:\nDel. Jeiselaure de Souza\n(51) 99145-8919";
     return text;
 }
-function getDayOfWeek(dateStr) {
-    const [dia, mes, ano] = dateStr.split('/');
-    const date = new Date(ano, mes - 1, dia);
-    const days = ['domingo', 'segunda-feira', 'terça-feira', 'quarta-feira', 'quinta-feira', 'sexta-feira', 'sábado'];
-    return days[date.getDay()];
-}
-// Função para busca por pessoa (COM dia da semana)
 function buildMessageWithWeekday(date, escalaManual) {
     let escala = escalaManual || schedule[date];
-    if (!escala) return "";
+    if (!escala) return "Nenhum sobreaviso encontrado para essa data ou seleção.";
     const dayOfWeek = getDayOfWeek(date);
     const [sa01, sa02, saNac] = escala;
     let text = "*Sobreaviso DRV/DEIC*\nData: " + date + " (" + dayOfWeek + ")\n\n";
@@ -308,8 +364,7 @@ function handlePersonSearch() {
         return new Date(anoA, mesA - 1, diaA) - new Date(anoB, mesB - 1, diaB);
     });
     if (!datesFound.length) {
-        result = "Nenhum sobreaviso encontrado para essa pessoa.";
-        outputElement.value = result;
+        outputElement.value = "Nenhum sobreaviso encontrado para essa pessoa.";
         return;
     }
     result += "Novembro: " + novCount + " sobreavisos\n";
@@ -334,7 +389,11 @@ function aplicarTrocasMultiplas() {
         outputElement.value = "Selecione a data.";
         return;
     }
-    let escalaAtual = schedule[date] ? [...schedule[date]] : [];
+    let escalaAtual = schedule[date] ? [...schedule[date]] : null;
+    if (!escalaAtual) {
+        outputElement.value = "Nenhum sobreaviso encontrado para essa data ou seleção.";
+        return;
+    }
     function applyExchange(orig, sub) {
         if (orig && sub) {
             for (let i = 0; i < escalaAtual.length; i++) {
