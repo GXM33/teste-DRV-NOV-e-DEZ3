@@ -260,10 +260,36 @@ const phoneMap = {
     "Melo": "(51) 983190815"
 };
 const schedule = {
-    // ...cole seu objeto schedule completo aqui...
     "01/11/2025": ["Cristiano", "Vanessa", "Thiago"], "02/11/2025": ["Cristiano", "Vanessa", "Thiago"],
     "03/11/2025": ["Piazza", "César", "Vanessa"], "04/11/2025": ["Bona", "Vanessa", "Saraiva"],
-    // ... continue todas as datas ...
+    "05/11/2025": ["Dago", "Thássia", "Thiago"], "06/11/2025": ["Jeff", "Teresinha", "Saraiva"],
+    "07/11/2025": ["Cristiano", "Teresinha", "Thiago"], "08/11/2025": ["Jeff", "Juliana", "Tais"],
+    "09/11/2025": ["Jeff", "Luciana", "Edna"], "10/11/2025": ["Gui Mello", "Bona", "Tais"],
+    "11/11/2025": ["Brozoza", "Loss", "Saraiva"], "12/11/2025": ["Cau", "Luciana", "Edna"],
+    "13/11/2025": ["Melo", "Cátia", "Jeff"], "14/11/2025": ["Piazza", "Bona", "Saraiva"],
+    "15/11/2025": ["Gui Mello", "Thássia", "Saraiva"], "16/11/2025": ["Gui Mello", "Loss", "Saraiva"],
+    "17/11/2025": ["César", "Teresinha", "Jeff"], "18/11/2025": ["Dago", "Cátia", "Edna"],
+    "19/11/2025": ["Jeff", "Thássia", "Saraiva"], "20/11/2025": ["Cristiano", "Juliana", "Thiago"],
+    "21/11/2025": ["Gui Mello", "Melo", "Thiago"], "22/11/2025": ["Brozoza", "Loss", "Thiago"],
+    "23/11/2025": ["Brozoza", "Loss", "Thiago"], "24/11/2025": ["Cau", "Luciana", "Saraiva"],
+    "25/11/2025": ["Brozoza", "Loss", "Vanessa"], "26/11/2025": ["Melo", "Vanessa", "Jeff"],
+    "27/11/2025": ["Piazza", "Gui Mello", "Tais"], "28/11/2025": ["César", "Juliana", "Vanessa"],
+    "29/11/2025": ["Cau", "Luciana", "Edna"], "30/11/2025": ["Cau", "Juliana", "Edna"],
+    "01/12/2025": ["Dago", "Cátia", ""], "02/12/2025": ["Jeff", "Vanessa", ""],
+    "03/12/2025": ["Cristiano", "Juliana", ""], "04/12/2025": ["Gui Mello", "Jeff", ""],
+    "05/12/2025": ["Brozoza", "Loss", ""], "06/12/2025": ["Melo", "Thássia", ""],
+    "07/12/2025": ["Melo", "Thássia", ""], "08/12/2025": ["Cau", "Luciana", ""],
+    "09/12/2025": ["Melo", "Thássia", ""], "10/12/2025": ["Piazza", "Bona", ""],
+    "11/12/2025": ["César", "Teresinha", ""], "12/12/2025": ["Dago", "Cátia", ""],
+    "13/12/2025": ["Piazza", "Bona", ""], "14/12/2025": ["Piazza", "Bona", ""],
+    "15/12/2025": ["Jeff", "Vanessa", ""], "16/12/2025": ["Cristiano", "Juliana", ""],
+    "17/12/2025": ["Gui Mello", "Teresinha", ""], "18/12/2025": ["Brozoza", "Loss", ""],
+    "19/12/2025": ["Cau", "Luciana", ""], "20/12/2025": ["César", "Teresinha", ""],
+    "21/12/2025": ["César", "Teresinha", ""], "22/12/2025": ["Melo", "Thássia", ""],
+    "23/12/2025": ["Piazza", "Bona", ""], "24/12/2025": ["César", "Teresinha", ""],
+    "25/12/2025": ["Dago", "Cátia", ""], "26/12/2025": ["Jeff", "Vanessa", ""],
+    "27/12/2025": ["Dago", "Cátia", ""], "28/12/2025": ["Dago", "Cátia", ""],
+    "29/12/2025": ["Cristiano", "Juliana", ""], "30/12/2025": ["Gui Mello", "Brozoza", ""],
     "31/12/2025": ["Brozoza", "Loss", ""]
 };
 
@@ -281,12 +307,14 @@ function buildMessage(date, escalaManual) {
     let escala = escalaManual || schedule[date];
     if (!escala) return "";
     const [sa01, sa02, saNac] = escala;
-    const nome1 = nameMap[sa01];
-    const fone1 = phoneMap[sa01];
-    const nome2 = nameMap[sa02];
-    const fone2 = phoneMap[sa02];
-    let text = "*Sobreaviso DRV/DEIC*\nData: " + date + "\n\n" + nome1 + "\n" + fone1 + "\n\n" + nome2 + "\n" + fone2 + "\n\n";
-    if (saNac && saNac !== "") {
+    const nome1 = nameMap[sa01] || '';
+    const fone1 = phoneMap[sa01] || '';
+    const nome2 = nameMap[sa02] || '';
+    const fone2 = phoneMap[sa02] || '';
+    let text = "*Sobreaviso DRV/DEIC*\nData: " + date + "\n\n";
+    if (nome1) text += nome1 + "\n" + fone1 + "\n\n";
+    if (nome2) text += nome2 + "\n" + fone2 + "\n\n";
+    if (saNac && saNac !== "" && nameMap[saNac]) {
         const nomeNac = nameMap[saNac];
         const foneNac = phoneMap[saNac];
         text += "NAC: " + nomeNac + "\n" + foneNac + "\n\n";
@@ -305,12 +333,14 @@ function buildMessageWithDay(date, escalaManual) {
     if (!escala) return "";
     const dayOfWeek = getDayOfWeek(date);
     const [sa01, sa02, saNac] = escala;
-    const nome1 = nameMap[sa01];
-    const fone1 = phoneMap[sa01];
-    const nome2 = nameMap[sa02];
-    const fone2 = phoneMap[sa02];
-    let text = "*Sobreaviso DRV/DEIC*\nData: " + date + " (" + dayOfWeek + ")\n\n" + nome1 + "\n" + fone1 + "\n\n" + nome2 + "\n" + fone2 + "\n\n";
-    if (saNac && saNac !== "") {
+    const nome1 = nameMap[sa01] || '';
+    const fone1 = phoneMap[sa01] || '';
+    const nome2 = nameMap[sa02] || '';
+    const fone2 = phoneMap[sa02] || '';
+    let text = "*Sobreaviso DRV/DEIC*\nData: " + date + " (" + dayOfWeek + ")\n\n";
+    if (nome1) text += nome1 + "\n" + fone1 + "\n\n";
+    if (nome2) text += nome2 + "\n" + fone2 + "\n\n";
+    if (saNac && saNac !== "" && nameMap[saNac]) {
         const nomeNac = nameMap[saNac];
         const foneNac = phoneMap[saNac];
         text += "NAC: " + nomeNac + "\n" + foneNac + "\n\n";
@@ -361,6 +391,7 @@ function handlePersonSearch() {
     outputElement.value = result;
 }
 
+// CORRIGIDO: aceita qualquer troca informada e só retorna erro se nenhuma foi informada/realizada
 function aplicarTrocasMultiplas() {
     const date = document.getElementById('troca-date').value;
     const original1 = document.getElementById('pessoa-original1').value;
@@ -375,22 +406,24 @@ function aplicarTrocasMultiplas() {
         return;
     }
     let escalaAtual = schedule[date] ? [...schedule[date]] : [];
-    let trocou = false;
+    let trocouAlguem = false;
     function applyExchange(orig, sub) {
         if (orig && sub) {
+            let trocou = false;
             for (let i = 0; i < escalaAtual.length; i++) {
                 if (escalaAtual[i] === orig) {
                     escalaAtual[i] = sub;
                     trocou = true;
                 }
             }
+            if (trocou) trocouAlguem = true;
         }
     }
     applyExchange(original1, substituta1);
     applyExchange(original2, substituta2);
     applyExchange(original3, substituta3);
 
-    if (!trocou) {
+    if (!trocouAlguem) {
         outputElement.value = "Nenhuma troca foi realizada. Preencha os campos corretamente!";
         return;
     }
