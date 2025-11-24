@@ -87,26 +87,16 @@
                 <label for="person-select">Selecione uma pessoa:</label>
                 <select id="person-select" onchange="handlePersonSearch()">
                     <option value="">-- Escolha uma pessoa --</option>
-                    <option value="Cau">Insp. Acauã</option>
-                    <option value="Saraiva">Esc. Anderson Saraiva</option>
-                    <option value="Brozoza">Insp. Alexandre Brozoza</option>
-                    <option value="Cátia">Esc. Cátia Fortunato</option>
-                    <option value="Cristiano">Insp. Cristiano Soletti</option>
-                    <option value="César">Esc. César da Costa</option>
-                    <option value="Dago">Esc. Dagoberto O. das Virgens</option>
-                    <option value="Melo">Insp. Edmilson Melo</option>
-                    <option value="Edna">Insp. Edna Moraes</option>
-                    <option value="Piazza">Esc. Fernanda Piazza</option>
-                    <option value="Gui Mello">Insp. Guilherme Mello</option>
-                    <option value="Jeff">Esc. Jefferson Antoniol</option>
-                    <option value="Juliana">Insp. Juliana Tremper</option>
-                    <option value="Bona">Insp. Juliano Bonacina</option>
-                    <option value="Luciana">Esc. Luciana Bortoli</option>
-                    <option value="Loss">Insp. Lucas Loss</option>
-                    <option value="Tais">Insp. Tais Boesing</option>
-                    <option value="Teresinha">Insp. Teresinha Carivali</option>
-                    <option value="Thiago">Insp. Thiago Meireles</option>
-                    <option value="Thássia">Insp. Thássia Guterres</option>
+                    <option value="Cau">Insp. Acauã</option><option value="Saraiva">Esc. Anderson Saraiva</option>
+                    <option value="Brozoza">Insp. Alexandre Brozoza</option><option value="Cátia">Esc. Cátia Fortunato</option>
+                    <option value="Cristiano">Insp. Cristiano Soletti</option><option value="César">Esc. César da Costa</option>
+                    <option value="Dago">Esc. Dagoberto O. das Virgens</option><option value="Melo">Insp. Edmilson Melo</option>
+                    <option value="Edna">Insp. Edna Moraes</option><option value="Piazza">Esc. Fernanda Piazza</option>
+                    <option value="Gui Mello">Insp. Guilherme Mello</option><option value="Jeff">Esc. Jefferson Antoniol</option>
+                    <option value="Juliana">Insp. Juliana Tremper</option><option value="Bona">Insp. Juliano Bonacina</option>
+                    <option value="Luciana">Esc. Luciana Bortoli</option><option value="Loss">Insp. Lucas Loss</option>
+                    <option value="Tais">Insp. Tais Boesing</option><option value="Teresinha">Insp. Teresinha Carivali</option>
+                    <option value="Thiago">Insp. Thiago Meireles</option><option value="Thássia">Insp. Thássia Guterres</option>
                     <option value="Vanessa">Insp. Vanessa Trindade</option>
                 </select>
             </div>
@@ -251,8 +241,6 @@
     </div>
 
 <script>
-// === Mesma definição de nameMap, phoneMap, schedule, etc. do seu app ===
-
 const nameMap = {
     "Cau": "Insp. Acauã", "Piazza": "Esc. Fernanda Piazza", "Cristiano": "Insp. Cristiano Soletti",
     "Teresinha": "Insp. Teresinha Carivali", "Thiago": "Insp. Thiago Meireles", "César": "Esc. César da Costa",
@@ -263,7 +251,6 @@ const nameMap = {
     "Thássia": "Insp. Thássia Guterres","Juliana": "Insp. Juliana Tremper","Cátia": "Esc. Cátia Fortunato",
     "Melo": "Insp. Edmilson Melo"
 };
-
 const phoneMap = {
     "Cau": "(51) 986859065", "Piazza": "(51) 993605744", "Cristiano": "(51) 995659880", "Teresinha": "(51) 999829606",
     "Thiago": "(79) 988080613", "César": "(51) 998911160", "Vanessa": "(55) 984278960", "Bona": "(51) 989276060",
@@ -272,8 +259,13 @@ const phoneMap = {
     "Dago": "(51) 999920066", "Thássia": "(51) 996499862", "Juliana": "(51) 993337587", "Cátia": "(51) 985744501",
     "Melo": "(51) 983190815"
 };
-
-// ... sua variável schedule completa igual ao exemplo anterior, omitida para espaço ...
+const schedule = {
+    // ...cole seu objeto schedule completo aqui...
+    "01/11/2025": ["Cristiano", "Vanessa", "Thiago"], "02/11/2025": ["Cristiano", "Vanessa", "Thiago"],
+    "03/11/2025": ["Piazza", "César", "Vanessa"], "04/11/2025": ["Bona", "Vanessa", "Saraiva"],
+    // ... continue todas as datas ...
+    "31/12/2025": ["Brozoza", "Loss", ""]
+};
 
 function showTab(index) {
     const contents = document.querySelectorAll('.tab-content');
@@ -285,20 +277,98 @@ function showTab(index) {
     document.getElementById('output').value = '';
 }
 
-// ... Suas funções buildMessage, buildMessageWithDay, searchByDate, handlePersonSearch etc ...
+function buildMessage(date, escalaManual) {
+    let escala = escalaManual || schedule[date];
+    if (!escala) return "";
+    const [sa01, sa02, saNac] = escala;
+    const nome1 = nameMap[sa01];
+    const fone1 = phoneMap[sa01];
+    const nome2 = nameMap[sa02];
+    const fone2 = phoneMap[sa02];
+    let text = "*Sobreaviso DRV/DEIC*\nData: " + date + "\n\n" + nome1 + "\n" + fone1 + "\n\n" + nome2 + "\n" + fone2 + "\n\n";
+    if (saNac && saNac !== "") {
+        const nomeNac = nameMap[saNac];
+        const foneNac = phoneMap[saNac];
+        text += "NAC: " + nomeNac + "\n" + foneNac + "\n\n";
+    }
+    text += "Chefe de SI: Com. Bruna Caldeira\n(51) 99139-9403\n\nAutoridade Policial:\nDel. Jeiselaure de Souza\n(51) 99145-8919";
+    return text;
+}
+function getDayOfWeek(dateStr) {
+    const [dia, mes, ano] = dateStr.split('/');
+    const date = new Date(ano, mes - 1, dia);
+    const days = ['domingo', 'segunda-feira', 'terça-feira', 'quarta-feira', 'quinta-feira', 'sexta-feira', 'sábado'];
+    return days[date.getDay()];
+}
+function buildMessageWithDay(date, escalaManual) {
+    let escala = escalaManual || schedule[date];
+    if (!escala) return "";
+    const dayOfWeek = getDayOfWeek(date);
+    const [sa01, sa02, saNac] = escala;
+    const nome1 = nameMap[sa01];
+    const fone1 = phoneMap[sa01];
+    const nome2 = nameMap[sa02];
+    const fone2 = phoneMap[sa02];
+    let text = "*Sobreaviso DRV/DEIC*\nData: " + date + " (" + dayOfWeek + ")\n\n" + nome1 + "\n" + fone1 + "\n\n" + nome2 + "\n" + fone2 + "\n\n";
+    if (saNac && saNac !== "") {
+        const nomeNac = nameMap[saNac];
+        const foneNac = phoneMap[saNac];
+        text += "NAC: " + nomeNac + "\n" + foneNac + "\n\n";
+    }
+    text += "Chefe de SI: Com. Bruna Caldeira\n(51) 99139-9403\n\nAutoridade Policial:\nDel. Jeiselaure de Souza\n(51) 99145-8919";
+    return text;
+}
+function searchByDate() {
+    const date = document.getElementById('date-select').value;
+    if (!date) return;
+    document.getElementById('output').value = buildMessage(date);
+}
+function handlePersonSearch() {
+    const personShort = document.getElementById('person-select').value;
+    const outputElement = document.getElementById('output');
+    if (!personShort) {
+        outputElement.value = '';
+        return;
+    }
+    let result = '', novCount = 0, decCount = 0, datesFound = [];
+    for (let date in schedule) {
+        if (schedule.hasOwnProperty(date)) {
+            const escala = schedule[date];
+            if (escala.includes(personShort)) {
+                datesFound.push(date);
+                if (date.includes("/11/")) novCount++;
+                else if (date.includes("/12/")) decCount++;
+            }
+        }
+    }
+    datesFound = datesFound.sort((a, b) => {
+        const [diaA, mesA, anoA] = a.split('/');
+        const [diaB, mesB, anoB] = b.split('/');
+        return new Date(anoA, mesA - 1, diaA) - new Date(anoB, mesB - 1, diaB);
+    });
+    if (!datesFound.length) {
+        result = "Nenhum sobreaviso encontrado para essa pessoa.";
+        outputElement.value = result;
+        return;
+    }
+    result += "Novembro: " + novCount + " sobreavisos\n";
+    result += "Dezembro: " + decCount + " sobreavisos\n\n";
+    result += "════════════════════════════════════════\n\n";
+    for (let i = 0; i < datesFound.length; i++) {
+        if (i > 0) result += "\n\n════════════════════════════════════════\n\n";
+        result += buildMessageWithDay(datesFound[i]);
+    }
+    outputElement.value = result;
+}
 
 function aplicarTrocasMultiplas() {
     const date = document.getElementById('troca-date').value;
-    // Troca 1
     const original1 = document.getElementById('pessoa-original1').value;
     const substituta1 = document.getElementById('pessoa-troca1').value;
-    // Troca 2
     const original2 = document.getElementById('pessoa-original2').value;
     const substituta2 = document.getElementById('pessoa-troca2').value;
-    // Troca 3
     const original3 = document.getElementById('pessoa-original3').value;
     const substituta3 = document.getElementById('pessoa-troca3').value;
-
     const outputElement = document.getElementById('output');
     if (!date) {
         outputElement.value = "Selecione a data.";
@@ -306,45 +376,37 @@ function aplicarTrocasMultiplas() {
     }
     let escalaAtual = schedule[date] ? [...schedule[date]] : [];
     let trocou = false;
-
     function applyExchange(orig, sub) {
-        if (!orig || !sub) return false;
-        let did = false;
-        for (let i = 0; i < escalaAtual.length; i++) {
-            if (escalaAtual[i] === orig) {
-                escalaAtual[i] = sub;
-                did = true;
+        if (orig && sub) {
+            for (let i = 0; i < escalaAtual.length; i++) {
+                if (escalaAtual[i] === orig) {
+                    escalaAtual[i] = sub;
+                    trocou = true;
+                }
             }
         }
-        return did;
     }
-    let t1 = applyExchange(original1, substituta1);
-    let t2 = applyExchange(original2, substituta2);
-    let t3 = applyExchange(original3, substituta3);
+    applyExchange(original1, substituta1);
+    applyExchange(original2, substituta2);
+    applyExchange(original3, substituta3);
 
-    if (!t1 && !t2 && !t3) {
+    if (!trocou) {
         outputElement.value = "Nenhuma troca foi realizada. Preencha os campos corretamente!";
         return;
     }
     outputElement.value = buildMessageWithDay(date, escalaAtual);
 }
-
 function copyText() {
     const text = document.getElementById('output').value;
-    if (!text) {
-        alert('Nenhum texto para copiar!');
-        return;
-    }
+    if (!text) { alert('Nenhum texto para copiar!'); return; }
     navigator.clipboard.writeText(text).then(() => { alert('✅ Texto copiado!'); });
 }
-
 function sendWhatsApp() {
     const text = document.getElementById('output').value;
     if (!text) { alert('Nenhum texto para enviar!'); return; }
     const encoded = encodeURIComponent(text);
     window.open(`https://wa.me/?text=${encoded}`, '_blank');
 }
-
 function clearAll() {
     document.getElementById('output').value = '';
     document.getElementById('date-select').value = '';
@@ -357,7 +419,6 @@ function clearAll() {
     if (document.getElementById('pessoa-original3')) document.getElementById('pessoa-original3').value = '';
     if (document.getElementById('pessoa-troca3')) document.getElementById('pessoa-troca3').value = '';
 }
-// ...sua função sortDates, buildMessage, buildMessageWithDay, searchByDate e handlePersonSearch normalmente...
 </script>
 </body>
 </html>
