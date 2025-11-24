@@ -57,40 +57,19 @@
             <div class="tab-content active">
                 <label for="date-select">Selecione a data:</label>
                 <select id="date-select" onchange="searchByDate()">
-                    <!-- ... opções de datas ... -->
                     <option value="">-- Escolha uma data --</option>
-                    <option>01/11/2025</option>
-                    <!-- coloque todas as datas iguais ao restante do HTML fornecido anteriormente -->
+                    <option>01/11/2025</option><option>02/11/2025</option><option>03/11/2025</option>
+                    <!-- ... todas as datas até ... -->
                     <option>31/12/2025</option>
                 </select>
             </div>
-
             <!-- ABA 2: BUSCAR POR PESSOA -->
             <div class="tab-content">
                 <label for="person-select">Selecione uma pessoa:</label>
                 <select id="person-select" onchange="handlePersonSearch()">
                     <option value="">-- Escolha uma pessoa --</option>
-                    <option value="Cau">Insp. Acauã</option>
-                    <option value="Saraiva">Esc. Anderson Saraiva</option>
-                    <option value="Brozoza">Insp. Alexandre Brozoza</option>
-                    <option value="Cátia">Esc. Cátia Fortunato</option>
-                    <option value="Cristiano">Insp. Cristiano Soletti</option>
-                    <option value="César">Esc. César da Costa</option>
-                    <option value="Dago">Esc. Dagoberto O. das Virgens</option>
-                    <option value="Melo">Insp. Edmilson Melo</option>
-                    <option value="Edna">Insp. Edna Moraes</option>
-                    <option value="Piazza">Esc. Fernanda Piazza</option>
-                    <option value="Gui Mello">Insp. Guilherme Mello</option>
-                    <option value="Jeff">Esc. Jefferson Antoniol</option>
-                    <option value="Juliana">Insp. Juliana Tremper</option>
-                    <option value="Bona">Insp. Juliano Bonacina</option>
-                    <option value="Luciana">Esc. Luciana Bortoli</option>
-                    <option value="Loss">Insp. Lucas Loss</option>
-                    <option value="Tais">Insp. Tais Boesing</option>
-                    <option value="Teresinha">Insp. Teresinha Carivali</option>
-                    <option value="Thiago">Insp. Thiago Meireles</option>
-                    <option value="Thássia">Insp. Thássia Guterres</option>
-                    <option value="Vanessa">Insp. Vanessa Trindade</option>
+                    <!-- opções de pessoas -->
+                    <option value="Cau">Insp. Acauã</option><option value="Saraiva">Esc. Anderson Saraiva</option><option value="Brozoza">Insp. Alexandre Brozoza</option><option value="Cátia">Esc. Cátia Fortunato</option><option value="Cristiano">Insp. Cristiano Soletti</option><option value="César">Esc. César da Costa</option><option value="Dago">Esc. Dagoberto O. das Virgens</option><option value="Melo">Insp. Edmilson Melo</option><option value="Edna">Insp. Edna Moraes</option><option value="Piazza">Esc. Fernanda Piazza</option><option value="Gui Mello">Insp. Guilherme Mello</option><option value="Jeff">Esc. Jefferson Antoniol</option><option value="Juliana">Insp. Juliana Tremper</option><option value="Bona">Insp. Juliano Bonacina</option><option value="Luciana">Esc. Luciana Bortoli</option><option value="Loss">Insp. Lucas Loss</option><option value="Tais">Insp. Tais Boesing</option><option value="Teresinha">Insp. Teresinha Carivali</option><option value="Thiago">Insp. Thiago Meireles</option><option value="Thássia">Insp. Thássia Guterres</option><option value="Vanessa">Insp. Vanessa Trindade</option>
                 </select>
             </div>
 
@@ -100,7 +79,7 @@
                 <select id="troca-date">
                     <option value="">-- Escolha uma data --</option>
                     <option>01/11/2025</option>
-                    <!-- coloque todas as datas iguais ao restante do HTML fornecido anteriormente -->
+                    <!-- ... todas as datas até ... -->
                     <option>31/12/2025</option>
                 </select>
                 <!-- Troca 1 -->
@@ -108,53 +87,14 @@
                     <label for="pessoa-original1">Pessoa originalmente escalada (1):</label>
                     <select id="pessoa-original1">
                         <option value="">-- Escolha a pessoa original --</option>
-                        <option value="Cau">Insp. Acauã</option>
-                        <option value="Saraiva">Esc. Anderson Saraiva</option>
-                        <option value="Brozoza">Insp. Alexandre Brozoza</option>
-                        <option value="Cátia">Esc. Cátia Fortunato</option>
-                        <option value="Cristiano">Insp. Cristiano Soletti</option>
-                        <option value="César">Esc. César da Costa</option>
-                        <option value="Dago">Esc. Dagoberto O. das Virgens</option>
-                        <option value="Melo">Insp. Edmilson Melo</option>
-                        <option value="Edna">Insp. Edna Moraes</option>
-                        <option value="Piazza">Esc. Fernanda Piazza</option>
-                        <option value="Gui Mello">Insp. Guilherme Mello</option>
-                        <option value="Jeff">Esc. Jefferson Antoniol</option>
-                        <option value="Juliana">Insp. Juliana Tremper</option>
-                        <option value="Bona">Insp. Juliano Bonacina</option>
-                        <option value="Luciana">Esc. Luciana Bortoli</option>
-                        <option value="Loss">Insp. Lucas Loss</option>
-                        <option value="Tais">Insp. Tais Boesing</option>
-                        <option value="Teresinha">Insp. Teresinha Carivali</option>
-                        <option value="Thiago">Insp. Thiago Meireles</option>
-                        <option value="Thássia">Insp. Thássia Guterres</option>
-                        <option value="Vanessa">Insp. Vanessa Trindade</option>
+                        <!-- ... pessoas ... -->
+                        <option value="Cau">Insp. Acauã</option><option value="Saraiva">Esc. Anderson Saraiva</option><option value="Brozoza">Insp. Alexandre Brozoza</option><option value="Cátia">Esc. Cátia Fortunato</option><option value="Cristiano">Insp. Cristiano Soletti</option><option value="César">Esc. César da Costa</option><option value="Dago">Esc. Dagoberto O. das Virgens</option><option value="Melo">Insp. Edmilson Melo</option><option value="Edna">Insp. Edna Moraes</option><option value="Piazza">Esc. Fernanda Piazza</option><option value="Gui Mello">Insp. Guilherme Mello</option><option value="Jeff">Esc. Jefferson Antoniol</option><option value="Juliana">Insp. Juliana Tremper</option><option value="Bona">Insp. Juliano Bonacina</option><option value="Luciana">Esc. Luciana Bortoli</option><option value="Loss">Insp. Lucas Loss</option><option value="Tais">Insp. Tais Boesing</option><option value="Teresinha">Insp. Teresinha Carivali</option><option value="Thiago">Insp. Thiago Meireles</option><option value="Thássia">Insp. Thássia Guterres</option><option value="Vanessa">Insp. Vanessa Trindade</option>
                     </select>
                     <label for="pessoa-troca1">Pessoa que fará a troca (1):</label>
                     <select id="pessoa-troca1">
                         <option value="">-- Escolha a pessoa substituta --</option>
-                        <!-- mesmas opções de cima -->
-                        <option value="Cau">Insp. Acauã</option>
-                        <option value="Saraiva">Esc. Anderson Saraiva</option>
-                        <option value="Brozoza">Insp. Alexandre Brozoza</option>
-                        <option value="Cátia">Esc. Cátia Fortunato</option>
-                        <option value="Cristiano">Insp. Cristiano Soletti</option>
-                        <option value="César">Esc. César da Costa</option>
-                        <option value="Dago">Esc. Dagoberto O. das Virgens</option>
-                        <option value="Melo">Insp. Edmilson Melo</option>
-                        <option value="Edna">Insp. Edna Moraes</option>
-                        <option value="Piazza">Esc. Fernanda Piazza</option>
-                        <option value="Gui Mello">Insp. Guilherme Mello</option>
-                        <option value="Jeff">Esc. Jefferson Antoniol</option>
-                        <option value="Juliana">Insp. Juliana Tremper</option>
-                        <option value="Bona">Insp. Juliano Bonacina</option>
-                        <option value="Luciana">Esc. Luciana Bortoli</option>
-                        <option value="Loss">Insp. Lucas Loss</option>
-                        <option value="Tais">Insp. Tais Boesing</option>
-                        <option value="Teresinha">Insp. Teresinha Carivali</option>
-                        <option value="Thiago">Insp. Thiago Meireles</option>
-                        <option value="Thássia">Insp. Thássia Guterres</option>
-                        <option value="Vanessa">Insp. Vanessa Trindade</option>
+                        <!-- ... pessoas ... -->
+                        <option value="Cau">Insp. Acauã</option><option value="Saraiva">Esc. Anderson Saraiva</option><option value="Brozoza">Insp. Alexandre Brozoza</option><option value="Cátia">Esc. Cátia Fortunato</option><option value="Cristiano">Insp. Cristiano Soletti</option><option value="César">Esc. César da Costa</option><option value="Dago">Esc. Dagoberto O. das Virgens</option><option value="Melo">Insp. Edmilson Melo</option><option value="Edna">Insp. Edna Moraes</option><option value="Piazza">Esc. Fernanda Piazza</option><option value="Gui Mello">Insp. Guilherme Mello</option><option value="Jeff">Esc. Jefferson Antoniol</option><option value="Juliana">Insp. Juliana Tremper</option><option value="Bona">Insp. Juliano Bonacina</option><option value="Luciana">Esc. Luciana Bortoli</option><option value="Loss">Insp. Lucas Loss</option><option value="Tais">Insp. Tais Boesing</option><option value="Teresinha">Insp. Teresinha Carivali</option><option value="Thiago">Insp. Thiago Meireles</option><option value="Thássia">Insp. Thássia Guterres</option><option value="Vanessa">Insp. Vanessa Trindade</option>
                     </select>
                 </div>
                 <!-- Troca 2 -->
@@ -162,54 +102,14 @@
                     <label for="pessoa-original2">Pessoa originalmente escalada (2):</label>
                     <select id="pessoa-original2">
                         <option value="">-- Escolha a pessoa original --</option>
-                        <!-- mesmas opções -->
-                        <option value="Cau">Insp. Acauã</option>
-                        <option value="Saraiva">Esc. Anderson Saraiva</option>
-                        <option value="Brozoza">Insp. Alexandre Brozoza</option>
-                        <option value="Cátia">Esc. Cátia Fortunato</option>
-                        <option value="Cristiano">Insp. Cristiano Soletti</option>
-                        <option value="César">Esc. César da Costa</option>
-                        <option value="Dago">Esc. Dagoberto O. das Virgens</option>
-                        <option value="Melo">Insp. Edmilson Melo</option>
-                        <option value="Edna">Insp. Edna Moraes</option>
-                        <option value="Piazza">Esc. Fernanda Piazza</option>
-                        <option value="Gui Mello">Insp. Guilherme Mello</option>
-                        <option value="Jeff">Esc. Jefferson Antoniol</option>
-                        <option value="Juliana">Insp. Juliana Tremper</option>
-                        <option value="Bona">Insp. Juliano Bonacina</option>
-                        <option value="Luciana">Esc. Luciana Bortoli</option>
-                        <option value="Loss">Insp. Lucas Loss</option>
-                        <option value="Tais">Insp. Tais Boesing</option>
-                        <option value="Teresinha">Insp. Teresinha Carivali</option>
-                        <option value="Thiago">Insp. Thiago Meireles</option>
-                        <option value="Thássia">Insp. Thássia Guterres</option>
-                        <option value="Vanessa">Insp. Vanessa Trindade</option>
+                        <!-- ... pessoas ... -->
+                        <option value="Cau">Insp. Acauã</option><option value="Saraiva">Esc. Anderson Saraiva</option><option value="Brozoza">Insp. Alexandre Brozoza</option><option value="Cátia">Esc. Cátia Fortunato</option><option value="Cristiano">Insp. Cristiano Soletti</option><option value="César">Esc. César da Costa</option><option value="Dago">Esc. Dagoberto O. das Virgens</option><option value="Melo">Insp. Edmilson Melo</option><option value="Edna">Insp. Edna Moraes</option><option value="Piazza">Esc. Fernanda Piazza</option><option value="Gui Mello">Insp. Guilherme Mello</option><option value="Jeff">Esc. Jefferson Antoniol</option><option value="Juliana">Insp. Juliana Tremper</option><option value="Bona">Insp. Juliano Bonacina</option><option value="Luciana">Esc. Luciana Bortoli</option><option value="Loss">Insp. Lucas Loss</option><option value="Tais">Insp. Tais Boesing</option><option value="Teresinha">Insp. Teresinha Carivali</option><option value="Thiago">Insp. Thiago Meireles</option><option value="Thássia">Insp. Thássia Guterres</option><option value="Vanessa">Insp. Vanessa Trindade</option>
                     </select>
                     <label for="pessoa-troca2">Pessoa que fará a troca (2):</label>
                     <select id="pessoa-troca2">
                         <option value="">-- Escolha a pessoa substituta --</option>
-                        <!-- mesmas opções -->
-                        <option value="Cau">Insp. Acauã</option>
-                        <option value="Saraiva">Esc. Anderson Saraiva</option>
-                        <option value="Brozoza">Insp. Alexandre Brozoza</option>
-                        <option value="Cátia">Esc. Cátia Fortunato</option>
-                        <option value="Cristiano">Insp. Cristiano Soletti</option>
-                        <option value="César">Esc. César da Costa</option>
-                        <option value="Dago">Esc. Dagoberto O. das Virgens</option>
-                        <option value="Melo">Insp. Edmilson Melo</option>
-                        <option value="Edna">Insp. Edna Moraes</option>
-                        <option value="Piazza">Esc. Fernanda Piazza</option>
-                        <option value="Gui Mello">Insp. Guilherme Mello</option>
-                        <option value="Jeff">Esc. Jefferson Antoniol</option>
-                        <option value="Juliana">Insp. Juliana Tremper</option>
-                        <option value="Bona">Insp. Juliano Bonacina</option>
-                        <option value="Luciana">Esc. Luciana Bortoli</option>
-                        <option value="Loss">Insp. Lucas Loss</option>
-                        <option value="Tais">Insp. Tais Boesing</option>
-                        <option value="Teresinha">Insp. Teresinha Carivali</option>
-                        <option value="Thiago">Insp. Thiago Meireles</option>
-                        <option value="Thássia">Insp. Thássia Guterres</option>
-                        <option value="Vanessa">Insp. Vanessa Trindade</option>
+                        <!-- ... pessoas ... -->
+                        <option value="Cau">Insp. Acauã</option><option value="Saraiva">Esc. Anderson Saraiva</option><option value="Brozoza">Insp. Alexandre Brozoza</option><option value="Cátia">Esc. Cátia Fortunato</option><option value="Cristiano">Insp. Cristiano Soletti</option><option value="César">Esc. César da Costa</option><option value="Dago">Esc. Dagoberto O. das Virgens</option><option value="Melo">Insp. Edmilson Melo</option><option value="Edna">Insp. Edna Moraes</option><option value="Piazza">Esc. Fernanda Piazza</option><option value="Gui Mello">Insp. Guilherme Mello</option><option value="Jeff">Esc. Jefferson Antoniol</option><option value="Juliana">Insp. Juliana Tremper</option><option value="Bona">Insp. Juliano Bonacina</option><option value="Luciana">Esc. Luciana Bortoli</option><option value="Loss">Insp. Lucas Loss</option><option value="Tais">Insp. Tais Boesing</option><option value="Teresinha">Insp. Teresinha Carivali</option><option value="Thiago">Insp. Thiago Meireles</option><option value="Thássia">Insp. Thássia Guterres</option><option value="Vanessa">Insp. Vanessa Trindade</option>
                     </select>
                 </div>
                 <!-- Troca 3 -->
@@ -217,54 +117,14 @@
                     <label for="pessoa-original3">Pessoa originalmente escalada (3):</label>
                     <select id="pessoa-original3">
                         <option value="">-- Escolha a pessoa original --</option>
-                        <!-- mesmas opções -->
-                        <option value="Cau">Insp. Acauã</option>
-                        <option value="Saraiva">Esc. Anderson Saraiva</option>
-                        <option value="Brozoza">Insp. Alexandre Brozoza</option>
-                        <option value="Cátia">Esc. Cátia Fortunato</option>
-                        <option value="Cristiano">Insp. Cristiano Soletti</option>
-                        <option value="César">Esc. César da Costa</option>
-                        <option value="Dago">Esc. Dagoberto O. das Virgens</option>
-                        <option value="Melo">Insp. Edmilson Melo</option>
-                        <option value="Edna">Insp. Edna Moraes</option>
-                        <option value="Piazza">Esc. Fernanda Piazza</option>
-                        <option value="Gui Mello">Insp. Guilherme Mello</option>
-                        <option value="Jeff">Esc. Jefferson Antoniol</option>
-                        <option value="Juliana">Insp. Juliana Tremper</option>
-                        <option value="Bona">Insp. Juliano Bonacina</option>
-                        <option value="Luciana">Esc. Luciana Bortoli</option>
-                        <option value="Loss">Insp. Lucas Loss</option>
-                        <option value="Tais">Insp. Tais Boesing</option>
-                        <option value="Teresinha">Insp. Teresinha Carivali</option>
-                        <option value="Thiago">Insp. Thiago Meireles</option>
-                        <option value="Thássia">Insp. Thássia Guterres</option>
-                        <option value="Vanessa">Insp. Vanessa Trindade</option>
+                        <!-- ... pessoas ... -->
+                        <option value="Cau">Insp. Acauã</option><option value="Saraiva">Esc. Anderson Saraiva</option><option value="Brozoza">Insp. Alexandre Brozoza</option><option value="Cátia">Esc. Cátia Fortunato</option><option value="Cristiano">Insp. Cristiano Soletti</option><option value="César">Esc. César da Costa</option><option value="Dago">Esc. Dagoberto O. das Virgens</option><option value="Melo">Insp. Edmilson Melo</option><option value="Edna">Insp. Edna Moraes</option><option value="Piazza">Esc. Fernanda Piazza</option><option value="Gui Mello">Insp. Guilherme Mello</option><option value="Jeff">Esc. Jefferson Antoniol</option><option value="Juliana">Insp. Juliana Tremper</option><option value="Bona">Insp. Juliano Bonacina</option><option value="Luciana">Esc. Luciana Bortoli</option><option value="Loss">Insp. Lucas Loss</option><option value="Tais">Insp. Tais Boesing</option><option value="Teresinha">Insp. Teresinha Carivali</option><option value="Thiago">Insp. Thiago Meireles</option><option value="Thássia">Insp. Thássia Guterres</option><option value="Vanessa">Insp. Vanessa Trindade</option>
                     </select>
                     <label for="pessoa-troca3">Pessoa que fará a troca (3):</label>
                     <select id="pessoa-troca3">
                         <option value="">-- Escolha a pessoa substituta --</option>
-                        <!-- mesmas opções -->
-                        <option value="Cau">Insp. Acauã</option>
-                        <option value="Saraiva">Esc. Anderson Saraiva</option>
-                        <option value="Brozoza">Insp. Alexandre Brozoza</option>
-                        <option value="Cátia">Esc. Cátia Fortunato</option>
-                        <option value="Cristiano">Insp. Cristiano Soletti</option>
-                        <option value="César">Esc. César da Costa</option>
-                        <option value="Dago">Esc. Dagoberto O. das Virgens</option>
-                        <option value="Melo">Insp. Edmilson Melo</option>
-                        <option value="Edna">Insp. Edna Moraes</option>
-                        <option value="Piazza">Esc. Fernanda Piazza</option>
-                        <option value="Gui Mello">Insp. Guilherme Mello</option>
-                        <option value="Jeff">Esc. Jefferson Antoniol</option>
-                        <option value="Juliana">Insp. Juliana Tremper</option>
-                        <option value="Bona">Insp. Juliano Bonacina</option>
-                        <option value="Luciana">Esc. Luciana Bortoli</option>
-                        <option value="Loss">Insp. Lucas Loss</option>
-                        <option value="Tais">Insp. Tais Boesing</option>
-                        <option value="Teresinha">Insp. Teresinha Carivali</option>
-                        <option value="Thiago">Insp. Thiago Meireles</option>
-                        <option value="Thássia">Insp. Thássia Guterres</option>
-                        <option value="Vanessa">Insp. Vanessa Trindade</option>
+                        <!-- ... pessoas ... -->
+                        <option value="Cau">Insp. Acauã</option><option value="Saraiva">Esc. Anderson Saraiva</option><option value="Brozoza">Insp. Alexandre Brozoza</option><option value="Cátia">Esc. Cátia Fortunato</option><option value="Cristiano">Insp. Cristiano Soletti</option><option value="César">Esc. César da Costa</option><option value="Dago">Esc. Dagoberto O. das Virgens</option><option value="Melo">Insp. Edmilson Melo</option><option value="Edna">Insp. Edna Moraes</option><option value="Piazza">Esc. Fernanda Piazza</option><option value="Gui Mello">Insp. Guilherme Mello</option><option value="Jeff">Esc. Jefferson Antoniol</option><option value="Juliana">Insp. Juliana Tremper</option><option value="Bona">Insp. Juliano Bonacina</option><option value="Luciana">Esc. Luciana Bortoli</option><option value="Loss">Insp. Lucas Loss</option><option value="Tais">Insp. Tais Boesing</option><option value="Teresinha">Insp. Teresinha Carivali</option><option value="Thiago">Insp. Thiago Meireles</option><option value="Thássia">Insp. Thássia Guterres</option><option value="Vanessa">Insp. Vanessa Trindade</option>
                     </select>
                 </div>
                 <button class="btn-troca" onclick="aplicarTrocasMultiplas()">Gerar texto com trocas</button>
@@ -280,56 +140,80 @@
         </div>
     </div>
 
-<script>
-    // nameMap, phoneMap, schedule, sortDates, showTab, buildMessage, buildMessageWithDay, etc... (COLE O SCRIPT COMPLETO DA VERSÃO ANTERIOR!)
+    <script>
+        // ... cole todo o script daquela versão completa, mantendo os objetos nameMap, phoneMap, schedule, etc!!
 
-    // ... todos os objetos e funções anteriores...
+        // Substitua a função aplicarTrocasMultiplas pelo seguinte:
 
-    function aplicarTrocasMultiplas() {
-        const date = document.getElementById('troca-date').value;
-        // Troca 1
-        const original1 = document.getElementById('pessoa-original1').value;
-        const substituta1 = document.getElementById('pessoa-troca1').value;
-        // Troca 2
-        const original2 = document.getElementById('pessoa-original2').value;
-        const substituta2 = document.getElementById('pessoa-troca2').value;
-        // Troca 3
-        const original3 = document.getElementById('pessoa-original3').value;
-        const substituta3 = document.getElementById('pessoa-troca3').value;
+        function aplicarTrocasMultiplas() {
+            const date = document.getElementById('troca-date').value;
+            // Troca 1
+            const original1 = document.getElementById('pessoa-original1').value;
+            const substituta1 = document.getElementById('pessoa-troca1').value;
+            // Troca 2
+            const original2 = document.getElementById('pessoa-original2').value;
+            const substituta2 = document.getElementById('pessoa-troca2').value;
+            // Troca 3
+            const original3 = document.getElementById('pessoa-original3').value;
+            const substituta3 = document.getElementById('pessoa-troca3').value;
 
-        const outputElement = document.getElementById('output');
-        if (!date) {
-            outputElement.value = "Selecione a data.";
-            return;
-        }
-        let escalaAtual = schedule[date] ? [...schedule[date]] : [];
-        let trocou = false;
-
-        // Função que aplica troca para um par original/substituto, se ambos preenchidos
-        function applyExchange(orig, sub) {
-            if (!orig || !sub) return false;
-            let did = false;
-            for (let i = 0; i < escalaAtual.length; i++) {
-                if (escalaAtual[i] === orig) {
-                    escalaAtual[i] = sub;
-                    did = true;
-                }
+            const outputElement = document.getElementById('output');
+            if (!date) {
+                outputElement.value = "Selecione a data.";
+                return;
             }
-            return did;
+            let escalaAtual = schedule[date] ? [...schedule[date]] : [];
+            let trocaFeita = false;
+
+            // Detectar se NAC original está vazio e usuário fez uma troca apenas para o NAC
+            let nacIndex = 2;  // índice da NAC na escala
+            let nacTroca = false;
+            let nacNovo = "";
+
+            // Função que aplica troca para um par original/substituto, se ambos preenchidos
+            function applyExchange(orig, sub) {
+                if (!orig || !sub) return false;
+                // caso especial para NAC individual
+                if ((escalaAtual[nacIndex] === "" || escalaAtual[nacIndex] == null) && orig === "" && sub !== "") {
+                    nacTroca = true;
+                    nacNovo = sub;
+                    return true;
+                }
+                let did = false;
+                for (let i = 0; i < escalaAtual.length; i++) {
+                    if (escalaAtual[i] === orig) {
+                        escalaAtual[i] = sub;
+                        did = true;
+                    }
+                }
+                return did;
+            }
+
+            let t1 = applyExchange(original1, substituta1);
+            let t2 = applyExchange(original2, substituta2);
+            let t3 = applyExchange(original3, substituta3);
+
+            if (nacTroca && !t1 && !t2 && !t3) {
+                // Só NAC (sem escala padrão)
+                const nomeNac = nameMap[nacNovo];
+                const foneNac = phoneMap[nacNovo];
+                let text = "*Sobreaviso NAC DRV/DEIC*\n";
+                text += "Data: " + date + "\n\n";
+                text += "NAC: " + nomeNac + "\n" + foneNac + "\n\n";
+                outputElement.value = text;
+                return;
+            }
+
+            if (!t1 && !t2 && !t3 && !nacTroca) {
+                outputElement.value = "Nenhuma troca foi realizada. Preencha os campos corretamente!";
+                return;
+            }
+            // Se ocorreu troca normal, mas também houve troca de NAC, aplique no array padrão
+            if (nacTroca) escalaAtual[nacIndex] = nacNovo;
+            outputElement.value = buildMessageWithDay(date, escalaAtual);
         }
 
-        let t1 = applyExchange(original1, substituta1);
-        let t2 = applyExchange(original2, substituta2);
-        let t3 = applyExchange(original3, substituta3);
-
-        if (!t1 && !t2 && !t3) {
-            outputElement.value = "Nenhuma troca foi realizada. Preencha os campos corretamente!";
-            return;
-        }
-        outputElement.value = buildMessageWithDay(date, escalaAtual);
-    }
-
-    // cole (ou mantenha) todas as demais funções e objetos do exemplo anterior!
-</script>
+        // ... as demais funções e objetos do exemplo anterior!
+    </script>
 </body>
 </html>
